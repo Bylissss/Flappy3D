@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c3gju7bs4n8pu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.381703, 0.381703, 0.381703, 0.423529)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.395
+anchor_top = 0.253
+anchor_right = 0.605
+anchor_bottom = 0.747
+offset_left = -0.0400085
+offset_top = 0.0559845
+offset_right = 0.039978
+offset_bottom = -0.0560303
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 240
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2

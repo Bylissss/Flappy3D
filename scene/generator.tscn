@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfhgcg3ccw0rm"]
+
+[ext_resource type="Script" uid="uid://bduus4ncms2wl" path="res://script/generator.gd" id="1_fqrab"]
+[ext_resource type="PackedScene" uid="uid://dnahodx33g2pf" path="res://scene/pipe.tscn" id="2_sxim1"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_fqrab")
+pipe_scene = ExtResource("2_sxim1")
+
+[node name="spawn_timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="despawn_timer" type="Timer" parent="."]
+wait_time = 3.0

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://h2kn4a10c5jg"]
+
+[ext_resource type="ArrayMesh" uid="uid://c28q52nbajx6q" path="res://mesh/flappy.obj" id="1_1rkh6"]
+[ext_resource type="Script" uid="uid://d1j1iy3g4d1rj" path="res://script/flappy.gd" id="1_f1nid"]
+[ext_resource type="Material" uid="uid://x8y30q8vk6lj" path="res://material/pipe.tres" id="3_xuqu8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vjrgb"]
+radius = 0.843278
+
+[node name="flappy" type="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+mass = 0.11
+script = ExtResource("1_f1nid")
+jump = 1500
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_vjrgb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_1rkh6")
+surface_material_override/0 = ExtResource("3_xuqu8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vjrgb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
