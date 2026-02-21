@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://lskqx13yox5l"]
+
+[ext_resource type="Environment" uid="uid://cagr7ldei7k6w" path="res://assets/env_n_sky/env.tres" id="1_wgwml"]
+[ext_resource type="Script" uid="uid://bvbjhlgvngsvt" path="res://assets/script/game.gd" id="1_x5n27"]
+[ext_resource type="PackedScene" uid="uid://h2kn4a10c5jg" path="res://assets/scene/flappy.tscn" id="2_jsie2"]
+[ext_resource type="PackedScene" uid="uid://dfhgcg3ccw0rm" path="res://assets/scene/generator.tscn" id="3_qvu5t"]
+[ext_resource type="PackedScene" uid="uid://dp6i5d4ffnone" path="res://assets/scene/ui/main.tscn" id="4_4wnd8"]
+[ext_resource type="PackedScene" uid="uid://1ti3ytt34utk" path="res://assets/scene/death_plane.tscn" id="5_pi0uh"]
+[ext_resource type="PackedScene" uid="uid://4wo4gn00b7bx" path="res://assets/scene/ui/in_game.tscn" id="6_pi0uh"]
+[ext_resource type="PackedScene" uid="uid://bnbqy7vsem8ri" path="res://assets/scene/ui/retry.tscn" id="7_qvu5t"]
+
+[node name="Main Scene" type="Node3D"]
+script = ExtResource("1_x5n27")
+flappy_scene = ExtResource("2_jsie2")
+generator_scene = ExtResource("3_qvu5t")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = ExtResource("1_wgwml")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(0.707107, 0.395307, -0.586287, 0, 0.829135, 0.559048, 0.707107, -0.395307, 0.586287, 0, 0, 0)
+
+[node name="death_plane2" parent="env" instance=ExtResource("5_pi0uh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -44.4642, 0)
+
+[node name="death_plane" parent="env" instance=ExtResource("5_pi0uh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 43.7819, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.131)
+
+[node name="InGame" parent="." instance=ExtResource("6_pi0uh")]
+visible = false
+
+[node name="Main" parent="." instance=ExtResource("4_4wnd8")]
+
+[node name="Retry" parent="." instance=ExtResource("7_qvu5t")]
+visible = false
+
+[connection signal="score_changed" from="." to="InGame" method="_on_main_scene_score_changed"]
+[connection signal="score_changed" from="." to="Retry" method="_on_main_scene_score_changed"]

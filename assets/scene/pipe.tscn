@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnahodx33g2pf"]
+[gd_scene load_steps=9 format=3 uid="uid://dnahodx33g2pf"]
 
 [ext_resource type="ArrayMesh" uid="uid://cbwrwoqw1e0bt" path="res://mesh/pipe.obj" id="1_ij3kp"]
 [ext_resource type="Script" uid="uid://bs6dpcwc83gxk" path="res://script/pipe.gd" id="1_nqm84"]
 [ext_resource type="Script" uid="uid://d01l7kod4gskp" path="res://script/coin.gd" id="3_7juj4"]
+[ext_resource type="Material" uid="uid://x8y30q8vk6lj" path="res://material/pipe.tres" id="3_law7n"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nqm84"]
 height = 19.676
@@ -33,6 +34,7 @@ metadata/type = false
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.4158, 0)
 mesh = ExtResource("1_ij3kp")
+surface_material_override/0 = ExtResource("3_law7n")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.37139e-07, 13.2643, 0)
@@ -42,6 +44,7 @@ metadata/type = false
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -2.40758e-07, 14.4496, 0)
 mesh = ExtResource("1_ij3kp")
+surface_material_override/0 = ExtResource("3_law7n")
 
 [node name="coin" type="Area3D" parent="."]
 script = ExtResource("3_7juj4")

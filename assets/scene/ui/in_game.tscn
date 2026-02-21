@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://4wo4gn00b7bx"]
+[gd_scene load_steps=3 format=3 uid="uid://4wo4gn00b7bx"]
 
 [ext_resource type="Script" uid="uid://dc18h8rebl7ik" path="res://script/in_game.gd" id="1_glwsn"]
+[ext_resource type="PackedScene" uid="uid://hkrmi8jqvam" path="res://scene/ui/canvas_layer.tscn" id="2_01a0d"]
 
 [node name="InGame" type="Control"]
 layout_mode = 3
@@ -38,3 +39,5 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 61
 text = "0"
+
+[node name="CanvasLayer" parent="." instance=ExtResource("2_01a0d")]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cbia3640y80s5"
-path="res://.godot/imported/flappy.blend-be42b16f539fcbeac61a35d53ec7f38c.scn"
+path="res://.godot/imported/flappy.blend-85d48b468d4ce42c5cb51d09b37ee1bd.scn"
 
 [deps]
 
-source_file="res://mesh/flappy.blend"
-dest_files=["res://.godot/imported/flappy.blend-be42b16f539fcbeac61a35d53ec7f38c.scn"]
+source_file="res://assets/mesh/flappy.blend"
+dest_files=["res://.godot/imported/flappy.blend-85d48b468d4ce42c5cb51d09b37ee1bd.scn"]
 
 [params]
 

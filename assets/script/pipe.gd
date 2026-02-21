@@ -1,7 +1,7 @@
 extends Area3D 
 
 @export var has_coin := 0
-@export var pipe_speed = 20
+@export var pipe_speed = 10
 var coin_mesh : MeshInstance3D
 var coin : Area3D
 var game : Node3D
@@ -24,5 +24,5 @@ func _physics_process(delta: float) -> void:
 	translate(Vector3(-pipe_speed * delta  , 0, 0))
 
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(_body: Node3D) -> void:
 	game.finish()

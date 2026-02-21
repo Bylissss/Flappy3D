@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://hkrmi8jqvam"]
+
+[ext_resource type="Texture2D" uid="uid://dbvxnrpsytect" path="res://texture/sheet.png" id="2_k48by"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+scale = Vector2(6.06896, 3.72414)
+texture_normal = ExtResource("2_k48by")
+action = "jump"
