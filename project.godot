@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 Screenshot="*res://assets/script/screenshot.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 jump={

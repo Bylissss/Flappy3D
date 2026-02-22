@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnbqy7vsem8ri"]
 
-[ext_resource type="Script" uid="uid://pdc4k1j7nnhb" path="res://script/retry.gd" id="1_srtxq"]
+[ext_resource type="Script" uid="uid://pdc4k1j7nnhb" path="res://assets/script/retry.gd" id="1_srtxq"]
 
 [node name="Retry" type="Control"]
 layout_mode = 3

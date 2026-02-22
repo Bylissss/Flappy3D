@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnahodx33g2pf"]
+[gd_scene load_steps=11 format=3 uid="uid://dnahodx33g2pf"]
 
-[ext_resource type="ArrayMesh" uid="uid://cbwrwoqw1e0bt" path="res://mesh/pipe.obj" id="1_ij3kp"]
-[ext_resource type="Script" uid="uid://bs6dpcwc83gxk" path="res://script/pipe.gd" id="1_nqm84"]
-[ext_resource type="Script" uid="uid://d01l7kod4gskp" path="res://script/coin.gd" id="3_7juj4"]
-[ext_resource type="Material" uid="uid://x8y30q8vk6lj" path="res://material/pipe.tres" id="3_law7n"]
+[ext_resource type="ArrayMesh" uid="uid://cbwrwoqw1e0bt" path="res://assets/mesh/pipe.obj" id="1_ij3kp"]
+[ext_resource type="Script" uid="uid://bs6dpcwc83gxk" path="res://assets/script/pipe.gd" id="1_nqm84"]
+[ext_resource type="Script" uid="uid://d01l7kod4gskp" path="res://assets/script/coin.gd" id="3_7juj4"]
+[ext_resource type="Material" uid="uid://x8y30q8vk6lj" path="res://assets/material/pipe.tres" id="3_law7n"]
+[ext_resource type="AudioStream" uid="uid://b8fiu6p77yyuj" path="res://assets/sfx/Pickup3.wav" id="5_soehv"]
+[ext_resource type="AudioStream" uid="uid://b1my1dtul4jtp" path="res://assets/sfx/Hit3.wav" id="6_h0tbu"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_nqm84"]
 height = 19.676
@@ -47,6 +49,7 @@ mesh = ExtResource("1_ij3kp")
 surface_material_override/0 = ExtResource("3_law7n")
 
 [node name="coin" type="Area3D" parent="."]
+visible = false
 script = ExtResource("3_7juj4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="coin"]
@@ -58,6 +61,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7juj4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="coin"]
 shape = SubResource("SphereShape3D_law7n")
 metadata/type = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="coin"]
+stream = ExtResource("5_soehv")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_h0tbu")
+volume_db = 10.0
+unit_size = 100.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="coin" to="coin" method="_on_area_entered"]

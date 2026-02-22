@@ -5,12 +5,14 @@ extends Area3D
 var coin_mesh : MeshInstance3D
 var coin : Area3D
 var game : Node3D
+var crash_snd : AudioStreamPlayer3D
 
 func _ready() -> void:
 	has_coin = randi() % 2
 	coin_mesh = $coin/MeshInstance3D
 	coin = $coin
 	game = get_parent().get_parent()
+	crash_snd = $AudioStreamPlayer3D
 		
 	if has_coin == 1:
 		coin.show()
@@ -23,6 +25,6 @@ func _physics_process(delta: float) -> void:
 	coin_mesh.rotate_y( delta * 5)
 	translate(Vector3(-pipe_speed * delta  , 0, 0))
 
-
 func _on_body_entered(_body: Node3D) -> void:
+	crash_snd.play()
 	game.finish()

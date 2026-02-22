@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://4wo4gn00b7bx"]
 
-[ext_resource type="Script" uid="uid://dc18h8rebl7ik" path="res://script/in_game.gd" id="1_glwsn"]
-[ext_resource type="PackedScene" uid="uid://hkrmi8jqvam" path="res://scene/ui/canvas_layer.tscn" id="2_01a0d"]
+[ext_resource type="Script" uid="uid://dc18h8rebl7ik" path="res://assets/script/in_game.gd" id="1_glwsn"]
+[ext_resource type="PackedScene" uid="uid://hkrmi8jqvam" path="res://assets/scene/ui/canvas_layer.tscn" id="2_01a0d"]
 
 [node name="InGame" type="Control"]
 layout_mode = 3

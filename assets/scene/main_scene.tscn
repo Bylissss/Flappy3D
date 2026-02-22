@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lskqx13yox5l"]
+[gd_scene load_steps=10 format=3 uid="uid://lskqx13yox5l"]
 
 [ext_resource type="Environment" uid="uid://cagr7ldei7k6w" path="res://assets/env_n_sky/env.tres" id="1_wgwml"]
 [ext_resource type="Script" uid="uid://bvbjhlgvngsvt" path="res://assets/script/game.gd" id="1_x5n27"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1ti3ytt34utk" path="res://assets/scene/death_plane.tscn" id="5_pi0uh"]
 [ext_resource type="PackedScene" uid="uid://4wo4gn00b7bx" path="res://assets/scene/ui/in_game.tscn" id="6_pi0uh"]
 [ext_resource type="PackedScene" uid="uid://bnbqy7vsem8ri" path="res://assets/scene/ui/retry.tscn" id="7_qvu5t"]
+[ext_resource type="AudioStream" uid="uid://b1my1dtul4jtp" path="res://assets/sfx/Hit3.wav" id="9_upcoq"]
 
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_x5n27")
@@ -38,6 +39,13 @@ visible = false
 
 [node name="Retry" parent="." instance=ExtResource("7_qvu5t")]
 visible = false
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_upcoq")
+volume_db = 10.0
 
 [connection signal="score_changed" from="." to="InGame" method="_on_main_scene_score_changed"]
 [connection signal="score_changed" from="." to="Retry" method="_on_main_scene_score_changed"]
