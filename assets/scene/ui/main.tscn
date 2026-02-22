@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dp6i5d4ffnone"]
 
-[ext_resource type="Script" uid="uid://bk4fgx1vnhmsb" path="res://script/ui.gd" id="1_gax3d"]
+[ext_resource type="Script" uid="uid://bk4fgx1vnhmsb" path="res://assets/script/ui.gd" id="1_gax3d"]
 
 [sub_resource type="SystemFont" id="SystemFont_crwlo"]
+subpixel_positioning = 0
 
 [node name="Main" type="Control"]
 layout_mode = 3

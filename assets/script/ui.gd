@@ -13,7 +13,10 @@ func _ready() -> void:
 	exit.pressed.connect(on_exit_pressed)
 	
 func on_play_pressed():
+	game.get_node("AudioStreamPlayer3D2").play()
 	game.play()
 	
 func on_exit_pressed():
+	game.get_node("AudioStreamPlayer3D2").play()
+	await game.get_node("AudioStreamPlayer3D2").finished
 	game.exit()
